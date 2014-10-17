@@ -10,9 +10,9 @@ Recipe:
 
 wool:orange | wool:orange | wool:orange
 ---------------------------------------
-wool:black  | wool:white  | wool:black
+wool:violet | wool:white  | wool:violet
 ---------------------------------------
-wool:yellow | wool:yellow | wool:yellow
+wool:green  | wool:green  | wool:green
 
 Mod dependencies: mobs, default, wool
 
