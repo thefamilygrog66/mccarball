@@ -100,8 +100,11 @@ for i in ipairs(mccarball_list) do
 	    },
 		groups = { dig_immediate = 3 },
 		on_place = function(itemstack, placer, pointed_thing)
-			itemstack:take_item()
 			local locn = pointed_thing.above
+			if( minetest.env:get_node({x=locn.x, y=locn.y, z=locn.z}).name ~= "air" ) then
+				return
+			end
+			itemstack:take_item()	
 			minetest.env:add_node(locn, {name="mccarball:emptyball"})
 			if mccarballtype ~= "empty" then
 				-- drop mobs	
