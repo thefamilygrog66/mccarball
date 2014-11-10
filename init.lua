@@ -101,7 +101,8 @@ for i in ipairs(mccarball_list) do
 		groups = { dig_immediate = 3 },
 		on_place = function(itemstack, placer, pointed_thing)
 			local locn = pointed_thing.above
-			if( minetest.env:get_node({x=locn.x, y=locn.y, z=locn.z}).name ~= "air" ) then
+			if minetest.env:get_node({x=locn.x, y=locn.y, z=locn.z}).name ~= "air"
+			or minetest.is_protected(locn, placer:get_player_name()) then
 				return
 			end
 			itemstack:take_item()	
